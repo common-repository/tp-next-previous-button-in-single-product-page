@@ -1,0 +1,218 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.tpnpb_prev_next_buttons {
+    line-height: 40px;
+    margin: 20px 0;
+}
+
+.tpnpb_prev_next_buttons a{
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+}
+.tpnpb_prev_next_buttons a:hover{
+    opacity: 1;
+}
+.tpnpb_prev_next_buttons_disabled{
+    display: none;
+}
+.tpnpb_prev_next_buttons a[rel="prev"],
+.tpnpb_prev_next_buttons a[rel="next"] {
+    /* display: block; */
+}
+    
+.tpnpb_prev_next_buttons a[rel="prev"] {
+    float: right;
+}
+    
+.tpnpb_prev_next_buttons a[rel="next"] {
+    float: left;
+}
+    
+.tpnpb_prev_next_buttons::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.tpnpb-single-post-nav{
+
+}
+.tpnpb-single-post-nav img{
+    /* width: 70px;
+    border-radius: 50%; */
+}
+.tpnpb-previous-post-link{
+
+}
+.tpnpb-next-post-link{
+
+}
+
+.tpnpb-previous-post-link img{
+    margin: 0 15px 0 0;
+}
+.tpnpb-next-post-link img{
+    margin: 0 0 0 15px;
+}
+
+/* ******************* Position fixed ******************* */
+.tpnpb_prev_next_buttons_position_fixed{
+    
+}
+.tpnpb_prev_next_buttons_position_animation{
+
+}
+.tpnpb_prev_next_buttons_position_fixed .tpnpb-previous-post-link,
+.tpnpb_prev_next_buttons_position_animation .tpnpb-previous-post-link{
+    position: fixed;
+    z-index: 9;
+    right: 0;
+    padding: 20px;
+}
+.tpnpb_prev_next_buttons_position_fixed .tpnpb-next-post-link,
+.tpnpb_prev_next_buttons_position_animation .tpnpb-next-post-link{
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    padding: 20px;
+}
+
+.tpnpb_prev_next_buttons_position_tooltip{
+
+}
+.tpnpb_prev_next_buttons_position_tooltip .tpnpb-previous-post-link{
+    float: right;
+}
+.tpnpb_prev_next_buttons_position_tooltip img{
+    width: 100% !important;
+}
+.tpnpb_prev_next_buttons_position_tooltip h3{
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 15px !important;
+}
+.tpnpb_prev_next_buttons_position_tooltip p{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.tpnpb_prev_next_buttons_position_tooltip .demo-icon{
+    color: #fff;
+    background: #f5848c;
+    padding: 10px;
+    border-radius: 50%;
+}
+.tpnpb_prev_next_buttons_position_tooltip a{
+    display: inline-block;
+}
+/* ***************************************************** */
+
+/* <div class="tpnpb_tooltip">Hover Me to Preview
+    <div class="left">
+        <h3>Lorem Ipsum</h3>
+        <p>Dolor sit amet, consectetur adipiscing elit.</p>
+        <i></i>
+    </div>
+</div> */
+
+.tpnpb_tooltip {
+    display:inline-block;
+    position:relative;
+    text-align:left;
+}
+
+.tpnpb_tooltip .right {
+    min-width:300px; 
+    top:50%;
+    left:100%;
+    margin-left:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color:#444444;
+    background-color:#EEEEEE;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tpnpb_tooltip:hover .right {
+    visibility:visible; opacity:1;
+}
+
+.tpnpb_tooltip .right i {
+    position:absolute;
+    top:50%;
+    right:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+
+.tpnpb_tooltip .right i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(50%,-50%) rotate(-45deg);
+    background-color:#EEEEEE;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+.tpnpb_tooltip .left {
+    min-width:300px; 
+    top:50%;
+    right:100%;
+    margin-right:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color:#444444;
+    background-color:#EEEEEE;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tpnpb_tooltip:hover .left {
+    visibility:visible; opacity:1;
+}
+
+.tpnpb_tooltip .left i {
+    position:absolute;
+    top:50%;
+    left:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+
+.tpnpb_tooltip .left i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    background-color:#EEEEEE;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+/* ***************************************************** */

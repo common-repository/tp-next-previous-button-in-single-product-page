@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    a:focus {
+      outline: thin dotted #333;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+    input {
+      margin: 0;
+      font-size: 100%;
+      vertical-align: middle;
+      *overflow: visible;
+      line-height: normal;
+    }
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      color: #333;
+      background-color: #fff;
+    }
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #005580;
+      text-decoration: underline;
+    }
+    .row {
+      margin-left: -20px;
+      *zoom: 1;
+    }
+    .row:before,
+    .row:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    .row:after {
+      clear: both;
+    }
+    .span3 {
+      float: left;
+      min-height: 1px;
+      margin-left: 20px;
+      width: 220px;
+    }
+    .container {
+      width: 940px;
+      margin-right: auto;
+      margin-left: auto;
+      *zoom: 1;
+    }
+    .container:before,
+    .container:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    .container:after {
+      clear: both;
+    }
+    small {
+      font-size: 85%;
+    }
+    h1 {
+      margin: 10px 0;
+      font-family: inherit;
+      font-weight: bold;
+      line-height: 20px;
+      color: inherit;
+      text-rendering: optimizelegibility;
+      line-height: 40px;
+      font-size: 38.5px;
+    }
+    h1 small {
+      font-weight: normal;
+      line-height: 1;
+      color: #999;
+      font-size: 24.5px;
+    }
+
+    body {
+      margin-top: 90px;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      margin-left: -480px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding-top: 10px;
+      z-index: 10;
+    }
+    .footer {
+      color: #ddd;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+    .the-icons {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .switch {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      color: #666;
+    }
+    .switch input {
+      margin-right: 0.3em;
+    }
+    .codesOn .i-name {
+      display: none;
+    }
+    .codesOn .i-code {
+      display: inline;
+    }
+    .i-code {
+      display: none;
+    }
+    @font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?72009472');
+      src: url('./font/fontello.eot?72009472#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?72009472') format('woff'),
+           url('./font/fontello.ttf?72009472') format('truetype'),
+           url('./font/fontello.svg?72009472#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .demo-icon {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+     
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+    </style>
+    <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/" + font.fontname + "-ie7.css"><![endif]-->
+    <script>
+      function toggleCodes(on) {
+        var obj = document.getElementById('icons');
+      
+        if (on) {
+          obj.className += ' codesOn';
+        } else {
+          obj.className = obj.className.replace(' codesOn', '');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container header">
+      <h1>fontello <small>font demo</small></h1>
+      <label class="switch">
+        <input type="checkbox" onclick="toggleCodes(this.checked)">show codes
+      </label>
+    </div>
+    <div class="container" id="icons">
+      <div class="row">
+        <div class="span3" title="Code: 0xe2001">
+          <i class="demo-icon tpnpbicon-left-dir">&#xe2001;</i> <span class="i-name">tpnpbicon-left-dir</span><span class="i-code">0xe2001</span>
+        </div>
+        <div class="span3" title="Code: 0xe2002">
+          <i class="demo-icon tpnpbicon-right-dir">&#xe2002;</i> <span class="i-name">tpnpbicon-right-dir</span><span class="i-code">0xe2002</span>
+        </div>
+        <div class="span3" title="Code: 0xe2003">
+          <i class="demo-icon tpnpbicon-left-open">&#xe2003;</i> <span class="i-name">tpnpbicon-left-open</span><span class="i-code">0xe2003</span>
+        </div>
+        <div class="span3" title="Code: 0xe2004">
+          <i class="demo-icon tpnpbicon-right-open">&#xe2004;</i> <span class="i-name">tpnpbicon-right-open</span><span class="i-code">0xe2004</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2005">
+          <i class="demo-icon tpnpbicon-left">&#xe2005;</i> <span class="i-name">tpnpbicon-left</span><span class="i-code">0xe2005</span>
+        </div>
+        <div class="span3" title="Code: 0xe2006">
+          <i class="demo-icon tpnpbicon-right">&#xe2006;</i> <span class="i-name">tpnpbicon-right</span><span class="i-code">0xe2006</span>
+        </div>
+        <div class="span3" title="Code: 0xe2007">
+          <i class="demo-icon tpnpbicon-left-big">&#xe2007;</i> <span class="i-name">tpnpbicon-left-big</span><span class="i-code">0xe2007</span>
+        </div>
+        <div class="span3" title="Code: 0xe2008">
+          <i class="demo-icon tpnpbicon-right-big">&#xe2008;</i> <span class="i-name">tpnpbicon-right-big</span><span class="i-code">0xe2008</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2009">
+          <i class="demo-icon tpnpbicon-left-circled">&#xe2009;</i> <span class="i-name">tpnpbicon-left-circled</span><span class="i-code">0xe2009</span>
+        </div>
+        <div class="span3" title="Code: 0xe2010">
+          <i class="demo-icon tpnpbicon-right-circled">&#xe2010;</i> <span class="i-name">tpnpbicon-right-circled</span><span class="i-code">0xe2010</span>
+        </div>
+        <div class="span3" title="Code: 0xe2011">
+          <i class="demo-icon tpnpbicon-left-circled2">&#xe2011;</i> <span class="i-name">tpnpbicon-left-circled2</span><span class="i-code">0xe2011</span>
+        </div>
+        <div class="span3" title="Code: 0xe2012">
+          <i class="demo-icon tpnpbicon-right-circled2">&#xe2012;</i> <span class="i-name">tpnpbicon-right-circled2</span><span class="i-code">0xe2012</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2013">
+          <i class="demo-icon tpnpbicon-left-circled-1">&#xe2013;</i> <span class="i-name">tpnpbicon-left-circled-1</span><span class="i-code">0xe2013</span>
+        </div>
+        <div class="span3" title="Code: 0xe2014">
+          <i class="demo-icon tpnpbicon-right-circled-1">&#xe2014;</i> <span class="i-name">tpnpbicon-right-circled-1</span><span class="i-code">0xe2014</span>
+        </div>
+        <div class="span3" title="Code: 0xe2015">
+          <i class="demo-icon tpnpbicon-left-open-1">&#xe2015;</i> <span class="i-name">tpnpbicon-left-open-1</span><span class="i-code">0xe2015</span>
+        </div>
+        <div class="span3" title="Code: 0xe2016">
+          <i class="demo-icon tpnpbicon-right-open-1">&#xe2016;</i> <span class="i-name">tpnpbicon-right-open-1</span><span class="i-code">0xe2016</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2017">
+          <i class="demo-icon tpnpbicon-left-open-mini">&#xe2017;</i> <span class="i-name">tpnpbicon-left-open-mini</span><span class="i-code">0xe2017</span>
+        </div>
+        <div class="span3" title="Code: 0xe2018">
+          <i class="demo-icon tpnpbicon-right-open-mini">&#xe2018;</i> <span class="i-name">tpnpbicon-right-open-mini</span><span class="i-code">0xe2018</span>
+        </div>
+        <div class="span3" title="Code: 0xe2019">
+          <i class="demo-icon tpnpbicon-left-open-big">&#xe2019;</i> <span class="i-name">tpnpbicon-left-open-big</span><span class="i-code">0xe2019</span>
+        </div>
+        <div class="span3" title="Code: 0xe2020">
+          <i class="demo-icon tpnpbicon-right-open-outline">&#xe2020;</i> <span class="i-name">tpnpbicon-right-open-outline</span><span class="i-code">0xe2020</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2021">
+          <i class="demo-icon tpnpbicon-left-open-2">&#xe2021;</i> <span class="i-name">tpnpbicon-left-open-2</span><span class="i-code">0xe2021</span>
+        </div>
+        <div class="span3" title="Code: 0xe2022">
+          <i class="demo-icon tpnpbicon-right-open-2">&#xe2022;</i> <span class="i-name">tpnpbicon-right-open-2</span><span class="i-code">0xe2022</span>
+        </div>
+        <div class="span3" title="Code: 0xe2023">
+          <i class="demo-icon tpnpbicon-left-2">&#xe2023;</i> <span class="i-name">tpnpbicon-left-2</span><span class="i-code">0xe2023</span>
+        </div>
+        <div class="span3" title="Code: 0xe2024">
+          <i class="demo-icon tpnpbicon-right-2">&#xe2024;</i> <span class="i-name">tpnpbicon-right-2</span><span class="i-code">0xe2024</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2025">
+          <i class="demo-icon tpnpbicon-left-outline">&#xe2025;</i> <span class="i-name">tpnpbicon-left-outline</span><span class="i-code">0xe2025</span>
+        </div>
+        <div class="span3" title="Code: 0xe2026">
+          <i class="demo-icon tpnpbicon-right-outline">&#xe2026;</i> <span class="i-name">tpnpbicon-right-outline</span><span class="i-code">0xe2026</span>
+        </div>
+        <div class="span3" title="Code: 0xe2027">
+          <i class="demo-icon tpnpbicon-left-small">&#xe2027;</i> <span class="i-name">tpnpbicon-left-small</span><span class="i-code">0xe2027</span>
+        </div>
+        <div class="span3" title="Code: 0xe2028">
+          <i class="demo-icon tpnpbicon-right-small">&#xe2028;</i> <span class="i-name">tpnpbicon-right-small</span><span class="i-code">0xe2028</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2029">
+          <i class="demo-icon tpnpbicon-left-3">&#xe2029;</i> <span class="i-name">tpnpbicon-left-3</span><span class="i-code">0xe2029</span>
+        </div>
+        <div class="span3" title="Code: 0xe2030">
+          <i class="demo-icon tpnpbicon-right-3">&#xe2030;</i> <span class="i-name">tpnpbicon-right-3</span><span class="i-code">0xe2030</span>
+        </div>
+        <div class="span3" title="Code: 0xe2031">
+          <i class="demo-icon tpnpbicon-left-circle">&#xe2031;</i> <span class="i-name">tpnpbicon-left-circle</span><span class="i-code">0xe2031</span>
+        </div>
+        <div class="span3" title="Code: 0xe2032">
+          <i class="demo-icon tpnpbicon-right-circle">&#xe2032;</i> <span class="i-name">tpnpbicon-right-circle</span><span class="i-code">0xe2032</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2033">
+          <i class="demo-icon tpnpbicon-left-open-3">&#xe2033;</i> <span class="i-name">tpnpbicon-left-open-3</span><span class="i-code">0xe2033</span>
+        </div>
+        <div class="span3" title="Code: 0xe2034">
+          <i class="demo-icon tpnpbicon-right-open-3">&#xe2034;</i> <span class="i-name">tpnpbicon-right-open-3</span><span class="i-code">0xe2034</span>
+        </div>
+        <div class="span3" title="Code: 0xe2035">
+          <i class="demo-icon tpnpbicon-left-bold-1">&#xe2035;</i> <span class="i-name">tpnpbicon-left-bold-1</span><span class="i-code">0xe2035</span>
+        </div>
+        <div class="span3" title="Code: 0xe2036">
+          <i class="demo-icon tpnpbicon-right-bold-1">&#xe2036;</i> <span class="i-name">tpnpbicon-right-bold-1</span><span class="i-code">0xe2036</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2037">
+          <i class="demo-icon tpnpbicon-left-fat">&#xe2037;</i> <span class="i-name">tpnpbicon-left-fat</span><span class="i-code">0xe2037</span>
+        </div>
+        <div class="span3" title="Code: 0xe2038">
+          <i class="demo-icon tpnpbicon-right-fat">&#xe2038;</i> <span class="i-name">tpnpbicon-right-fat</span><span class="i-code">0xe2038</span>
+        </div>
+        <div class="span3" title="Code: 0xe2039">
+          <i class="demo-icon tpnpbicon-left-open-4">&#xe2039;</i> <span class="i-name">tpnpbicon-left-open-4</span><span class="i-code">0xe2039</span>
+        </div>
+        <div class="span3" title="Code: 0xe2040">
+          <i class="demo-icon tpnpbicon-right-open-4">&#xe2040;</i> <span class="i-name">tpnpbicon-right-open-4</span><span class="i-code">0xe2040</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2041">
+          <i class="demo-icon tpnpbicon-left-4">&#xe2041;</i> <span class="i-name">tpnpbicon-left-4</span><span class="i-code">0xe2041</span>
+        </div>
+        <div class="span3" title="Code: 0xe2042">
+          <i class="demo-icon tpnpbicon-right-4">&#xe2042;</i> <span class="i-name">tpnpbicon-right-4</span><span class="i-code">0xe2042</span>
+        </div>
+        <div class="span3" title="Code: 0xe2043">
+          <i class="demo-icon tpnpbicon-left-circled-2">&#xe2043;</i> <span class="i-name">tpnpbicon-left-circled-2</span><span class="i-code">0xe2043</span>
+        </div>
+        <div class="span3" title="Code: 0xe2044">
+          <i class="demo-icon tpnpbicon-right-circled-2">&#xe2044;</i> <span class="i-name">tpnpbicon-right-circled-2</span><span class="i-code">0xe2044</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2045">
+          <i class="demo-icon tpnpbicon-left-open-5">&#xe2045;</i> <span class="i-name">tpnpbicon-left-open-5</span><span class="i-code">0xe2045</span>
+        </div>
+        <div class="span3" title="Code: 0xe2046">
+          <i class="demo-icon tpnpbicon-right-open-5">&#xe2046;</i> <span class="i-name">tpnpbicon-right-open-5</span><span class="i-code">0xe2046</span>
+        </div>
+        <div class="span3" title="Code: 0xe2047">
+          <i class="demo-icon tpnpbicon-left-circle-1">&#xe2047;</i> <span class="i-name">tpnpbicon-left-circle-1</span><span class="i-code">0xe2047</span>
+        </div>
+        <div class="span3" title="Code: 0xe2048">
+          <i class="demo-icon tpnpbicon-right-circle-1">&#xe2048;</i> <span class="i-name">tpnpbicon-right-circle-1</span><span class="i-code">0xe2048</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2049">
+          <i class="demo-icon tpnpbicon-right-open-big">&#xe2049;</i> <span class="i-name">tpnpbicon-right-open-big</span><span class="i-code">0xe2049</span>
+        </div>
+        <div class="span3" title="Code: 0xe2050">
+          <i class="demo-icon tpnpbicon-left-1">&#xe2050;</i> <span class="i-name">tpnpbicon-left-1</span><span class="i-code">0xe2050</span>
+        </div>
+        <div class="span3" title="Code: 0xe2051">
+          <i class="demo-icon tpnpbicon-right-1">&#xe2051;</i> <span class="i-name">tpnpbicon-right-1</span><span class="i-code">0xe2051</span>
+        </div>
+        <div class="span3" title="Code: 0xe2052">
+          <i class="demo-icon tpnpbicon-left-dir-1">&#xe2052;</i> <span class="i-name">tpnpbicon-left-dir-1</span><span class="i-code">0xe2052</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2053">
+          <i class="demo-icon tpnpbicon-right-dir-1">&#xe2053;</i> <span class="i-name">tpnpbicon-right-dir-1</span><span class="i-code">0xe2053</span>
+        </div>
+        <div class="span3" title="Code: 0xe2054">
+          <i class="demo-icon tpnpbicon-left-bold">&#xe2054;</i> <span class="i-name">tpnpbicon-left-bold</span><span class="i-code">0xe2054</span>
+        </div>
+        <div class="span3" title="Code: 0xe2055">
+          <i class="demo-icon tpnpbicon-right-bold">&#xe2055;</i> <span class="i-name">tpnpbicon-right-bold</span><span class="i-code">0xe2055</span>
+        </div>
+        <div class="span3" title="Code: 0xe2056">
+          <i class="demo-icon tpnpbicon-left-thin">&#xe2056;</i> <span class="i-name">tpnpbicon-left-thin</span><span class="i-code">0xe2056</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe2057">
+          <i class="demo-icon tpnpbicon-right-thin">&#xe2057;</i> <span class="i-name">tpnpbicon-right-thin</span><span class="i-code">0xe2057</span>
+        </div>
+        <div class="span3" title="Code: 0xe2058">
+          <i class="demo-icon tpnpbicon-left-open-outline">&#xe2058;</i> <span class="i-name">tpnpbicon-left-open-outline</span><span class="i-code">0xe2058</span>
+        </div>
+      </div>
+    <div class="container footer">Generated by <a href="https://fontello.com">fontello.com</a></div>
+  </body>
+</html>
